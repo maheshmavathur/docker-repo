@@ -1,0 +1,48 @@
+Jenkins Install - https://devopsarticle.com/how-to-install-jenkins-on-aws-ec2-ubuntu-20-04/
+
+Jenkins Slave Master - https://www.coachdevops.com/2019/02/jenkins-master-slave-setup-jenkins.html
+
+JFrog - https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/6.23.41/jfrog-artifactory-oss-6.23.41.zip
+
+SonarQube - https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/
+
+IP Address - https://www.guru99.com/ip-address-classes.html
+
+Ansible Roles - https://www.linuxtechi.com/create-use-ansible-roles-in-playbook/
+
+OSI Layers - https://in.images.search.yahoo.com/search/images;_ylt=AwrxzQJitENi3hoAXQW7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=iaas+paas+saas&fr2=piv-web&type=E211IN714G0&fr=mcafee&guccounter=1#id=1&iurl=https%3A%2F%2Fwww.redhat.com%2Fcms%2Fmanaged-files%2Fiaas_focus-paas-saas-diagram-1200x1046.png&action=click
+
+Tomcat using Ansible - https://www.techbeginner.in/2021/06/how-to-install-tomcat-using-ansible.html
+
+Apache Tomcat using Ansible - https://automateinfra.com/2022/01/08/how-to-deploy-apache-tomcat-using-ansible/
+
+IP Address - https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/
+
+AWS VPC Peer - https://www.youtube.com/watch?v=HMInA8yMw1k&ab_channel=AWSTrainingCenter
+
+Docker on Ubuntu - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+Ansible using Docker - https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04
+
+DockerHub - https://hub.docker.com/
+
+Maven - https://hub.docker.com/_/maven
+
+https://youtu.be/rsU-UnAtgBM  – EFS
+
+https://youtu.be/2NOQTa9lNS8 – EFS 2
+
+CloudFront - https://d2zthjocvv7mvn.cloudfront.net/DevFolio/index.html
+
+https://youtube.com/watch?v=T2xoTC7gbbs&feature=share   – Docker Jenkins
+
+[
+To install Jenks docker
+docker run -d --name jenkins -p 50000:50000 -p 8080:8080  jenkins/jenkins:lts
+
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jenkins
+
+docker run -d --name jenkins-docker_jenks_slave jenkinsci/jnlp-slave -url http://172.17.0.2:8080 63aaa8b5d4c5e718b0f4f4e5008559cc9a6c8c2dc0eaae15244f56338902b813 docker_jenks_slave
+]
+
+--To be continued..
