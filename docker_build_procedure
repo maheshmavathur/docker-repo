@@ -1,0 +1,38 @@
+Step 1: Clone the repo which contains pox.xml. Both Dockerfile and pom.xml should be in same folder.
+
+Step 2: Build the source code using Dockerfile (We are building manually using mvn clean package)
+FROM maven:3.5.2-jdk-8
+WORKDIR /var/test
+COPY . .
+RUN mvn clean package
+
+Step 3: Create Volume Folder (sudo chmod 777 file_name)
+> Create a Dockerfile in volume folder and write below lines. 
+
+Step 4:
+FROM tomcat
+COPY build_file.war /usr/local/tomcat/webapps
+CMD ["catalina.sh", "run"]
+
+Step 5:
+Procedure 1:
+Copy WAR files to the Volume folder () and cd .. (to the previous folder where Dockerfile and builds are place)
+
+Build Docker Image - >> docker build -d <imagename:tag_name> .
+Run the docker Image to create container - >> docker run -d -p <hostport:containerport> -v volume_folder:/usr/local/tomcat/webapps/ tomcat:9.0(from Docker Hub)
+Docker container will be created after this. To go inside the container - >> docker exec -it <container_id> bash 
+# If its running then will run tomcat in the browser using- >> public_id:hostport/projectfolder
+#If its not running then check the container status using - >> docker ps -a and debug accordingly
+
+OR
+
+Procedure 2:
+Copy WAR files to the Volume folder ()
+
+Build Docker Image - >> docker build -d <imagename:tag_name> .
+Run the docker Image to create container - >> docker run -d -p <hostport:containerport> <docker_image:tag_name>
+Docker container will be created after this. To go inside the container - >> docker exec -it <container_id> bash 
+# If its running then will run tomcat in the browser using- >> public_id:hostport/projectfolder
+#If its not running then check the container status using - >> docker ps -a and debug accordingly
+
+--END
