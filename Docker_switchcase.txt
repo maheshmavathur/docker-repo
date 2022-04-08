@@ -1,0 +1,50 @@
+Docker file for running switch case using entry point. 
+=====================================================
+
+FROM ubuntu:20.04
+RUN apt-get update -y
+#ADD apache-tomcat-10.0.20.tar.gz /home
+COPY switch.sh /home
+RUN chmod 777 /home/switch.sh
+ENTRYPOINT [ "bash", "/home/switch.sh" ] 
+CMD [ "Lohith" ]
+
+
+Switch case script. 
+===================
+
+#!/bin/bash
+set -x
+echo "Enter the first num "
+read var1
+echo "Enter the second num "
+read var2
+while :
+do
+echo " 1. Addition "
+echo " 2. Subtraction "
+echo " 3. Quit "
+echo -n " Type 1 or 2 or 3: "
+read -n 1 -t 15 a
+printf "\n"
+case $a in
+1*) echo " $var1 + $var2 = $(($var1+$var2)) ";;
+
+2*) echo " $var1 + $var2 = $(($var1-$var2)) ";;
+
+3*) exit 0 ;;
+
+*) echo "try again." ;;
+esac
+done
+
+
+
+
+
+
+
+
+
+
+esac

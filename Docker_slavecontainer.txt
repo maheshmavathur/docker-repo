@@ -1,0 +1,29 @@
+Docker file to compile the code from git,and build. 
+==================================================
+
+FROM maven:3.5.2-jdk-8
+RUN mkdir -p /var/test
+WORKDIR /var/test
+COPY . .
+RUN mvn clean package
+
+docker run -d --name jenkins -p 50000:50000 -p 8080:8080  jenkins/jenkins:lts
+
+
+https://www.youtube.com/watch?v=-whQq-v7rTA
+
+
+To create jenkins slave: 
+=======================
+
+# Jenkins server
+docker run -d --name jenkins -p 50000:50000 -p 8080:8080  jenkins/jenkins:lts
+
+# display server logs to get the startup token
+docker logs jenkins
+
+# server container IP
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jenkins
+
+# jenkins agent
+docker run -d --name jenkins-slave1 jenkinsci/jnlp-slave -url http://172.17.0.2:8080 790e6af065fe5912c942f4d83ab7a53076364bc376074c6c0477954ff0310b99 slave1
