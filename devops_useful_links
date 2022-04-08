@@ -45,4 +45,4 @@ docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jenk
 docker run -d --name jenkins-docker_jenks_slave jenkinsci/jnlp-slave -url http://172.17.0.2:8080 63aaa8b5d4c5e718b0f4f4e5008559cc9a6c8c2dc0eaae15244f56338902b813 docker_jenks_slave
 ]
 
---To be continued..
+--To be continued...
