@@ -1,3 +1,4 @@
+            DOCKER BUILD PROCEDURE
 Step 1: Clone the repo which contains pox.xml. Both Dockerfile and pom.xml should be in same folder.
 
 Step 2: Build the source code using Dockerfile (We are building manually using mvn clean package)
