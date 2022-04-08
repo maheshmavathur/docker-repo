@@ -16,7 +16,7 @@ COPY build_file.war /usr/local/tomcat/webapps
 CMD ["catalina.sh", "run"]
 
 Step 5:
-Procedure 1:
+Procedure 1: TO ACCESS THE BIND MOUNT(can change bind mount anytime and the chages will be reflected in output)
 Copy WAR files to the Volume folder () and cd .. (to the previous folder where Dockerfile and builds are place)
 
 Build Docker Image - >> docker build -d <imagename:tag_name> .
@@ -27,7 +27,7 @@ Docker container will be created after this. To go inside the container - >> doc
 
 OR
 
-Procedure 2:
+Procedure 2: TO BUILD AND RUN ONLY SPECIFIC .WAR FILE 
 Copy WAR files to the Volume folder ()
 
 Build Docker Image - >> docker build -d <imagename:tag_name> .
