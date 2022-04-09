@@ -1,0 +1,42 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[
+Procedure 1:
+
+To install Jenks docker
+docker run -d --name jenkins -p 50000:50000 -p 8080:8080  jenkins/jenkins:lts
+
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' jenkins
+
+docker run -d --name jenkins-docker_jenks_slave jenkinsci/jnlp-slave -url http://172.17.0.2:8080 63aaa8b5d4c5e718b0f4f4e5008559cc9a6c8c2dc0eaae15244f56338902b813 docker_jenks_slave
+
+
+
+Procedure 2:
+
+First establish SSH Connection between Master and Slave
+
+In Master run cJenkins command >> docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+
+Check for running container >> Private IP:8080 >> Jenkins should start
+
+Check for known hosts in /var/jenkins_home (Inside the Container)
+
+In Master -->copy known_hosts to /var/Jenkins_home>> docker cp known_hosts > container_id:/var/jenkins_home
+
+In Jenkins UI:
+In Salve >> apt-get update >> sudo apt install default-jdk -y
+Goto Manage Jenkins 
+    > Manage Node
+    > Create a new node as Permanent Agent and Create
+    1. No of Executors as 2
+    2. Home Directory as /home/ubuntu (slave machine)
+    3. Label as >> Java or any other
+    4. Select Launch using SSH
+    5. Master Host IP --> Private IP
+    6. Add credentials 
+    7. Select SSH username with password
+    8. Copy Private key from Master and add in the Private Key
+    9. Select No Verification
+    10. Save
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
