@@ -1,0 +1,40 @@
+docker run --name docker-sql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql -- me
+
+
+docker run --name docker-sql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql
+
+
+
+
+
+
+
+
+Tejas Ks20:48
+sudo apt-get update
+sudo apt-get install mysql-client
+mysql -h endpointname -u username -p
+Sachin B M20:50
+devopsdatabase.c5ztgdh6wl77.us-east-2.rds.amazonaws.com
+
+Tejas Ks21:07
+CREATE TABLE [table name] (firstname VARCHAR(20), middleinitial VARCHAR(3), lastname VARCHAR(35),suffix VARCHAR(3),
+
+
+
+
+apt install mysql-server
+mysql -h localhost -u [USERNAME] -p [PASSWORD]
+
+
+
+mysql -h database-2.czy7jmbqdfay.ap-south-1.rds.amazonaws.com -u admin -p admin1234
+
+
+maheshdb-vpc-sg (sg-0e70911451b721f1b)
+
+vpc-08e6e7cd6e11a77f2
+
+database-2.czy7jmbqdfay.ap-south-1.rds.amazonaws.com
+
+3306
