@@ -26,6 +26,11 @@ CREATE TABLE [table name] (firstname VARCHAR(20), middleinitial VARCHAR(3), last
 apt install mysql-server
 mysql -h localhost -u [USERNAME] -p [PASSWORD]
 
+CREATE DATABASE <databasename>;
+CREATE TABLE [table name] (firstname VARCHAR(20), middleinitial VARCHAR(3), lastname VARCHAR(35),phone int(3));
+use <databasename>;
+INSERT INTO <table name> VALUES(1, 'Sandesh'), (2, 'Dileepa'), (3, 'Anil'), (4, 'Tejas');
+SELECT * FROM <tablename>;
 
 
 mysql -h database-2.czy7jmbqdfay.ap-south-1.rds.amazonaws.com -u admin -p admin1234
